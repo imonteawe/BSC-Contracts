@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="stable.bscswap.com" />
+    <meta property="og:url" content="https://stable.bscswap.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="First stablecoin oriented decentralized exchange on Binance Smart Chain" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="stable.bscswap.com" />
+    <meta name="twitter:site" content="@BSCswapProtocol" />
+    <meta name="twitter:creator" content="@BSCswapProtocol" />
+    <meta name="twitter:description" content="First stablecoin oriented decentralized exchange on Binance Smart Chain"/>
+    <meta name="twitter:url" content="https://stable.bscswap.com" />
+    <title>BSCswap Stable</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="tvision.css" />
+    <script src="/metamask.web3.min.js"></script>
+    <script src="/jquery.min.js"></script>
+    <script src="/web3.min.js"></script>
+    <script src="/web3modal.min.js"></script>
+    <script src="/notify.min.js"></script>
+    <script src="/bigNumber.min.js"></script>
+    <script src="/abis.js"></script>
+    <script src="/init.js"></script>
+    <script src="/common.js"></script>
+    <script src="/deposit.js"></script>
+  </head>
+  <body>
+    <div class="top-menu-bar">
+      <label for="hamburger" class='border-menu'></label>
+      <input type="checkbox" id="hamburger"/>
+
+      <a href="/">Home</a>
+      <a href="https://lfi.loaprotocol.io" target="_blank">Wrap LTokens</a>
+      <a href="/deposit.html">Deposit & Wrap BAI</a>
+      <a href="/withdraw.html">Withdraw</a>
+      <a href="https://bscswap.com" target="_blank">BSCswap</a>
+    </div>
+    <div id="screen">
+        <div class="blue window">
+            <h1><img src="./logo.png" alt="🌀 Curve" height="100"></h1>
+        </div>
+        <div class="error window half-width info" id="error-window"></div>
+
+        <div class="window white add-liquidity">
+            <fieldset class="currencies">
+                <legend>Currencies:</legend>
+                <ul>
+                    <li>
+                        <label for="currency_0">LBUSD (Must Wrap BUSD to LBUSD on Wrap LTokens page First)</label>
+                        <input type="text" id="currency_0" name="from_cur" value="0.00">
+                    </li>
+                    <li>
+                        <label for="currency_1">LUSDT (Must Wrap USDT to LUSDT on Wrap LTokens page First)</label>
+                        <input type="text" id="currency_1" name="from_cur" value="0.00">
+                    </li>
+                    <li>
+                        <label for="currency_2">LDAI (Must Wrap DAI to LDAI on Wrap LTokens page First)</label>
+                        <input type="text" id="currency_2" name="from_cur" value="0.00">
+                    </li>
+                </ul>
+            </fieldset>
+            <ul>
+                <li>
+                    <input id="sync-balances" type="checkbox" name="sync-balances" checked>
+                    <label for="sync-balances">Add all coins in a balanced proportion</label>
+                </li>
+                <li>
+                    <input id="max-balances" type="checkbox" name="max-balances" checked>
+                    <label for="max-balances">Use maximum amount of coins available</label>
+                </li>
+            </ul>
+
+            <p style="text-align: center">
+                <button id="add-liquidity">Deposit & Wrap BAI</button>
+                <p class='simple-error' id='highslippage-warning'><span class='text'>Warning! High slippage</span>: <span class='percent'></span>%</p>
+                <p class='success' id='bonus-window'>Bonus: <span></span>%</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="blue window half-width info">
+        <fieldset id="lp-info-currency">
+            <legend>Currency reserves</legend>
+            <ul id='balances-info'>
+                <li><b>BUSD:</b> <span></span></li>
+                <li><b>USDT:</b> <span></span></li>
+                <li><b>DAI:</b> <span></span></li>
+                <li><b>BUSD+USDT+DAI:</b> <span></span></li>
+            </ul>
+            <p><b>Fee:</b> <span id='fee-info'></span>%</p>
+          </fieldset>
+          <fieldset id="lp-info-container">
+            <legend>My share:</legend>
+            <ul id='lp-info'>
+                <li><b>BUSD:</b> <span></span></li>
+                <li><b>USDT:</b> <span></span></li>
+                <li><b>DAI:</b> <span></span></li>
+                <li><b>BUSD+USDT+DAI:</b> <span></span></li>
+            </ul>
+      </fieldset>
+    </div>
+
+  </body>
+</html>
